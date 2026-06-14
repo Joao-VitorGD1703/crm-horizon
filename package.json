@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "cd admin && npm install",
     "dev": "npm run dev --prefix admin",
     "build": "npm run build --prefix admin"
   },
