@@ -3,7 +3,7 @@ import { createPinia } from 'pinia'
 import './style.css'
 import App from './App.vue'
 import router from './router'
-console.log("ola")
+console.log("ola1")
 const app = createApp(App)
 const pinia = createPinia()
 
