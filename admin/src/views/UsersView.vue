@@ -282,19 +282,6 @@ const callAdminFunction = async (action, payload) => {
 }
 
 const saveUser = async () => {
-  if (form.value.premium_until) {
-    const today = new Date()
-    today.setHours(0, 0, 0, 0)
-    
-    const [year, month, day] = form.value.premium_until.split('-')
-    const selectedDate = new Date(year, month - 1, day)
-    
-    if (selectedDate < today) {
-      showToast('A data de acesso Premium não pode ser anterior a hoje.', 'error')
-      return
-    }
-  }
-
   saving.value = true
   try {
     if (isEditMode.value) {
