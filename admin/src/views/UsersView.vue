@@ -298,6 +298,15 @@ const saveUser = async () => {
   saving.value = true
   try {
     if (isEditMode.value) {
+      // Se for trial, garantimos a perda imediata do acesso
+      let premiumUntilVal = form.value.premium_until || null;
+      let cancelAtPeriodEndVal = form.value.cancel_at_period_end;
+      
+      if (form.value.subscription_status === 'trial') {
+        premiumUntilVal = null;
+        cancelAtPeriodEndVal = false;
+      }
+
       // Editar apenas tabela users
       const { error } = await supabase
         .from('users')
@@ -305,8 +314,8 @@ const saveUser = async () => {
           name: form.value.name,
           hotel_name: form.value.hotel_name,
           subscription_status: form.value.subscription_status,
-          premium_until: form.value.premium_until || null,
-          cancel_at_period_end: form.value.cancel_at_period_end,
+          premium_until: premiumUntilVal,
+          cancel_at_period_end: cancelAtPeriodEndVal,
           is_active: form.value.is_active
         })
         .eq('id', form.value.id)
