@@ -16,6 +16,6 @@
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   color: #374151;
-  background-color: #F3F4F5;
+  background-color: #F3F4F6;
 }
 </style>
