@@ -1,0 +1,14 @@
+{
+  "name": "horizoncrm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run dev --prefix admin",
+    "build": "npm run build --prefix admin"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
